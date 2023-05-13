@@ -1,0 +1,18 @@
+#This is a moveit controller connecting follow_joint_trajectory controller with JointTrajectoryController
+controller_list:
+  - name: robot_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+    - link1_j
+    - link2_j
+    - link3_j
+    - link4_j
+    - link5_j
+  - name: hand_ee_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+    - grip1_j
+    - grip2_j

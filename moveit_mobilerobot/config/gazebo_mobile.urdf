@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="mobile">
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.0138190144496119 0 -0.0431673900274688" rpy="0 0 0" />
+            <mass value="31.7075369483224" />
+            <inertia ixx="0.575605061304987" ixy="3.51082356052424E-16" ixz="0.0186981817600818" iyy="1.81309521166369" iyz="2.71935379746767E-18" izz="2.34074148213745" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="leftlink">
+        <inertial>
+            <origin xyz="0 -0.0150888529886914 1.11022302462516E-16" rpy="0 0 0" />
+            <mass value="0.972322926286042" />
+            <inertia ixx="0.00298429263256057" ixy="-4.06865911972671E-20" ixz="6.21951588041205E-19" iyy="0.00555828243731783" iyz="-4.3528684667429E-20" izz="0.00298429263256057" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/leftlink.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/leftlink.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="leftjoint" type="continuous">
+        <origin xyz="-0.11 0.27 -0.04" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="leftlink" />
+        <axis xyz="0 -1 0" />
+        <limit effort="1" velocity="1" />
+    </joint>
+    <link name="rightlink">
+        <inertial>
+            <origin xyz="0 0.0150888529886914 0" rpy="0 0 0" />
+            <mass value="0.97232292628604" />
+            <inertia ixx="0.00298429263256056" ixy="5.64638728743207E-20" ixz="-8.62185923183121E-35" iyy="0.00555828243731782" iyz="-1.36346232656228E-35" izz="0.00298429263256056" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/rightlink.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/rightlink.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="rightjoint" type="continuous">
+        <origin xyz="-0.11 -0.27 -0.04" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="rightlink" />
+        <axis xyz="0 -1 0" />
+    </joint>
+    <link name="base_arm">
+        <inertial>
+            <origin xyz="0.135 0 0.0513630393832272" rpy="0 0 0" />
+            <mass value="9.57504950586454" />
+            <inertia ixx="0.0928627005287626" ixy="-2.14059146999494E-17" ixz="7.75348749148665E-18" iyy="0.0928627005287626" iyz="-9.62616851588067E-18" izz="0.163110185871387" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/base_arm.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/base_arm.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_arm_j" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="base_arm" />
+        <axis xyz="0 0 0" />
+    </joint>
+    <link name="link1">
+        <inertial>
+            <origin xyz="1.60982338570648E-15 9.99200722162641E-16 0.0962519948396813" rpy="0 0 0" />
+            <mass value="1.2867673371048" />
+            <inertia ixx="0.00574899022438492" ixy="-3.08328527862465E-05" ixz="5.9130393376342E-19" iyy="0.00605670094642953" iyz="-1.55333022598435E-18" izz="0.00299466513021321" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="link1_j" type="revolute">
+        <origin xyz="0.135 0 0.1" rpy="0 0 0" />
+        <parent link="base_arm" />
+        <child link="link1" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="6.284" effort="300" velocity="3" />
+    </joint>
+    <link name="link2">
+        <inertial>
+            <origin xyz="0.0152793909089112 -0.0487295487047015 0.17785147178054" rpy="0 0 0" />
+            <mass value="2.35926366465447" />
+            <inertia ixx="0.0409676709612601" ixy="3.73610748781228E-07" ixz="-0.00225874714320909" iyy="0.0409639423399071" iyz="-0.000224100350712859" izz="0.00226006139791823" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="link2_j" type="revolute">
+        <origin xyz="-0.00493648572628486 0.0497557143318654 0.22" rpy="0 0 0" />
+        <parent link="link1" />
+        <child link="link2" />
+        <axis xyz="0.098729714525699 -0.995114286637306 0" />
+        <limit lower="-1.57" upper="1.982" effort="300" velocity="3" />
+    </joint>
+    <link name="link3">
+        <inertial>
+            <origin xyz="-0.159186253677725 -0.0710636098100677 0.00486332831886899" rpy="0 0 0" />
+            <mass value="1.84613046379197" />
+            <inertia ixx="0.00284341050510619" ixy="-0.0011552709461591" ixz="0.000389853066158717" iyy="0.0143729715049999" iyz="3.86790567130589E-05" izz="0.0160431107662921" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link3.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link3.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="link3_j" type="revolute">
+        <origin xyz="0.0215748788843777 0.007165088200347 0.379479461423349" rpy="0 0 0" />
+        <parent link="link2" />
+        <child link="link3" />
+        <axis xyz="-0.0987297145256989 0.995114286637306 0" />
+        <limit lower="-0.7" upper="1.65" effort="200" velocity="3" />
+    </joint>
+    <link name="link4">
+        <inertial>
+            <origin xyz="-0.05024889842285 -0.0602554502550051 1.38777878078145E-17" rpy="0 0 0" />
+            <mass value="0.577179196137117" />
+            <inertia ixx="0.000409291654613533" ixy="-9.37772265644118E-05" ixz="-1.21006663501339E-19" iyy="0.00134518488179969" iyz="8.80934192830478E-20" izz="0.00152642026654833" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link4 .STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link4 .STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="link4_j" type="revolute">
+        <origin xyz="-0.338485039839798 -0.033582606343168 0.00999999999999998" rpy="0 0 0" />
+        <parent link="link3" />
+        <child link="link4" />
+        <axis xyz="-0.0987297145256988 0.995114286637306 0" />
+        <limit lower="0.0" upper="2.5" effort="200" velocity="3" />
+    </joint>
+    <link name="link5">
+        <inertial>
+            <origin xyz="-0.0305789188235419 -0.00303387054782905 -1.38777878078145E-17" rpy="0 0 0" />
+            <mass value="0.112049224746715" />
+            <inertia ixx="0.000202087727609559" ixy="1.76199067891951E-05" ixz="-1.11543755946178E-20" iyy="2.62417143311385E-05" iyz="1.1529456435668E-19" izz="0.00020118887750736" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link5 .STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/link5 .STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="link5_j" type="revolute">
+        <origin xyz="-0.124929837250573 -0.0676648783679186 0" rpy="0 0 0" />
+        <parent link="link4" />
+        <child link="link5" />
+        <axis xyz="-0.995114286637306 -0.0987297145257001 0" />
+        <limit lower="0" upper="3.142" effort="200" velocity="3" />
+    </joint>
+    <link name="grip1">
+        <inertial>
+            <origin xyz="-0.0214211541590298 0.0639776643764789 -0.015" rpy="0 0 0" />
+            <mass value="0.016875" />
+            <inertia ixx="1.28615243383173E-06" ixy="-1.34581750830488E-06" ixz="-1.34022471571019E-21" iyy="8.27634756616828E-06" iyz="-4.81344786060294E-22" izz="7.80468750000001E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/grip1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/grip1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="grip1_j" type="prismatic">
+        <origin xyz="-0.0517459429051399 -0.00513394515533633 0.015" rpy="0 0 0" />
+        <parent link="link5" />
+        <child link="grip1" />
+        <axis xyz="-0.098729714525699 0.995114286637306 0" />
+        <limit lower="-0.05" upper="0" effort="200" velocity="3" />
+    </joint>
+    <link name="grip2">
+        <inertial>
+            <origin xyz="-0.00823826841331998 -0.0688949769320137 -0.0149999999999999" rpy="0 0 0" />
+            <mass value="0.016875" />
+            <inertia ixx="1.28615243383173E-06" ixy="-1.34581750830488E-06" ixz="-4.06011194401537E-21" iyy="8.27634756616828E-06" iyz="-6.56629635238384E-22" izz="7.80468750000001E-06" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/grip2.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/grip2.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="grip2_j" type="prismatic">
+        <origin xyz="-0.0517459429051399 -0.00513394515533633 0.015" rpy="0 0 0" />
+        <parent link="link5" />
+        <child link="grip2" />
+        <axis xyz="-0.098729714525699 0.995114286637306 0" />
+        <limit lower="0" upper="0.05" effort="200" velocity="3" />
+    </joint>
+    <!-- Camera -->
+    <link name="camera">
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.05 0.05" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.05 0.05 0.05" />
+            </geometry>
+            <material name="green" />
+        </visual>
+        <inertial>
+            <mass value="1e-5" />
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+            <box_inertia m="0.1" x="0.05" y="0.05" z="0.05" />
+            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+        </inertial>
+    </link>
+    <joint name="camera_joint" type="fixed">
+        <axis xyz="0 1 0" />
+        <origin xyz="-0.19 -0.07 0.0551" rpy="0 0 3.14159" />
+        <parent link="link3" />
+        <child link="camera" />
+    </joint>
+    <!-- Hokuyo Laser -->
+    <link name="hokuyo_link">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://mobile/meshes/hokuyo.dae" />
+            </geometry>
+        </visual>
+        <inertial>
+            <mass value="1e-5" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+        </inertial>
+    </link>
+    <joint name="hokuyo_joint" type="fixed">
+        <axis xyz="0 1 0" />
+        <origin xyz="-0.41 0 0.01" rpy="0 0 3.14159" />
+        <parent link="base_link" />
+        <child link="hokuyo_link" />
+    </joint>
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <!-- Plugin update rate in Hz -->
+            <updateRate>50</updateRate>
+            <!-- Name of left joint, defaults to `left_joint` -->
+            <leftJoint>leftjoint</leftJoint>
+            <!-- Name of right joint, defaults to `right_joint` -->
+            <rightJoint>rightjoint</rightJoint>
+            <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+            <wheelSeparation>0.5</wheelSeparation>
+            <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+            <wheelDiameter>0.23</wheelDiameter>
+            <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+            <wheelAcceleration>1.0</wheelAcceleration>
+            <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+            <wheelTorque>20</wheelTorque>
+            <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+            <commandTopic>cmd_vel</commandTopic>
+            <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+            <odometryTopic>odom</odometryTopic>
+            <!-- Odometry frame, defaults to `odom` -->
+            <odometryFrame>odom</odometryFrame>
+            <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+            <odometrySource>1</odometrySource>
+            <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+            <publishWheelTF>true</publishWheelTF>
+            <!-- Set to true to publish transforms for the odometry, defaults to true -->
+            <publishOdom>true</publishOdom>
+            <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+            <publishWheelJointState>true</publishWheelJointState>
+            <!-- Set to true to swap right and left wheels, defaults to true -->
+            <legacyMode>false</legacyMode>
+        </plugin>
+        <plugin name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+    <!-- camera -->
+    <gazebo reference="camera">
+        <sensor type="camera" name="camera1">
+            <update_rate>30.0</update_rate>
+            <camera name="head">
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>800</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>mobile/camera1</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                <frameName>camera</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+        </sensor>
+    </gazebo>
+    <!-- hokuyo -->
+    <gazebo reference="hokuyo_link">
+        <sensor type="gpu_ray" name="head_hokuyo_sensor">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>40</update_rate>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-1.570796</min_angle>
+                        <max_angle>1.570796</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.10</min>
+                    <max>30.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+                <noise>
+                    <type>gaussian</type>
+                    <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+                    <mean>0.0</mean>
+                    <stddev>0.01</stddev>
+                </noise>
+            </ray>
+            <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+                <topicName>/mobile/laser/scan</topicName>
+                <frameName>hokuyo_link</frameName>
+            </plugin>
+        </sensor>
+    </gazebo>
+    <transmission name="trans_leftjoint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="leftjoint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="leftjoint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_rightjoint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="rightjoint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="rightjoint_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_link1_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link1_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link1_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_link2_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link2_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link2_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_link3_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link3_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link3_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_link4_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link4_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link4_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_link5_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="link5_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="link5_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip1_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip1_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip1_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_grip2_j">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="grip2_j">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="grip2_j_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+    <gazebo reference="link1">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link2">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link3">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link4">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link5">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="link1">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="grip1">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="grip2">
+        <selfCollide>true</selfCollide>
+    </gazebo>
+</robot>
+
