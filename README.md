@@ -56,27 +56,27 @@ rosrun final_project arm_controller.py
 ```
 4- SLAM
 
-1- to launch Gazebo and the controllers
-```bash
-roslaunch mobile robot_urdf.launch
-```
-2- To launch rviz
-Also make sure to add the robot model and to set the frame to be base_link. And to add the laserscan and the images. In addition make sure to add the topics of both laserscan and image. 
-```bash
-roslaunch mobile display.launch
-```
-3- Run gmapping 
-```bash
-rosrun gmapping slam_gmapping scan:=/mobile/laser/scan
-```
-4- Run the teleop keys code
-```bash
-rosrun final_project key.py
-```
-5- Save the map
-```bash
-rosrun map_server map_saver -f ~/<map_name>
-```
+  1- to launch Gazebo and the controllers
+  ```bash
+  roslaunch mobile robot_urdf.launch
+  ```
+  2- To launch rviz
+  Also make sure to add the robot model and to set the frame to be base_link. And to add the laserscan and the images. In addition make sure to add the topics of both laserscan and image. 
+  ```bash
+  roslaunch mobile display.launch
+  ```
+  3- Run gmapping 
+  ```bash
+  rosrun gmapping slam_gmapping scan:=/mobile/laser/scan
+  ```
+  4- Run the teleop keys code
+  ```bash
+  rosrun final_project key.py
+  ```
+  5- Save the map
+  ```bash
+  rosrun map_server map_saver -f ~/<map_name>
+  ```
 5- Moveit
 To control the arm using the moveit package run the following command
 ```bash
