@@ -33,7 +33,7 @@ sudo apt-get install ros-noetic-slam-gmapping
 # Commands
 
 To be able to run the project you have to run these commands in this following order.
-1- to launch Gazebo and the controllers
+1- to launch Gazebo and the controllers. Note: you can ignore the PID controller error.
 ```bash
 roslaunch mobile robot_urdf.launch
 ```
