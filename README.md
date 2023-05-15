@@ -13,7 +13,16 @@ sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
 ```
 Moveit:
 ```bash
+sudo apt install python3-wstool
+```
+```bash
+mkdir -p ~/ws_moveit/src
+cd ~/ws_moveit/src
 
+wstool init .
+wstool merge -t . https://raw.githubusercontent.com/ros-planning/moveit/master/moveit.rosinstall
+wstool remove  moveit_tutorials  # this is cloned in the next section
+wstool update -t .
 ```
 
 # Commands
