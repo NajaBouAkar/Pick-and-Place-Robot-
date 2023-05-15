@@ -55,6 +55,7 @@ This code runs a node to control the ar from values read from the hand.msg
 rosrun final_project arm_controller.py
 ```
 4- SLAM
+
 1- to launch Gazebo and the controllers
 ```bash
 roslaunch mobile robot_urdf.launch
